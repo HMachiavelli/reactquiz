@@ -3,10 +3,10 @@ import db from '../db.json'
 
 import Widget from '../src/components/Widget'
 import QuizBackground from '../src/components/QuizBackground';
+import QuizLogo from '../src/components/QuizLogo';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-
-const theme = db.theme;
+import Head from 'next/head';
 
 const QuizContainer = styled.div`
   width: 100%;
@@ -22,10 +22,16 @@ const QuizContainer = styled.div`
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>Breaking Bad Quiz</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"></link>
+      </Head>
       <QuizContainer>
+        <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>The legend of Zelda</h1>
+            <h1>Breaking Bad</h1>
           </Widget.Header>
 
           <Widget.Content>
