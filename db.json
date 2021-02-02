@@ -2,7 +2,17 @@
     "bg": "https://images6.alphacoders.com/321/thumb-1920-321927.jpg",
     "title": "Título do Quiz",
     "description": "",
-    "questions": [],
+    "questions": [
+        {
+            "alternatives": [
+                "Verdadeiro",
+                "Falso"
+            ],
+            "answer": 1,
+            "image": "https://rollingstone.uol.com.br/media/_versions/aaron-paul-breaking-bad_reproducao_widelg.jpg",
+            "title": "Verdadeiro ou Falso? O diretor Vince Gilligan tinha a intenção inicial de matar Jesse ainda na primeira temporada."
+        }
+    ],
     "external": [
         "https://aluraquiz-v2.omariosouto.vercel.app/"
     ],
