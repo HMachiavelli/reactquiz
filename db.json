@@ -6,6 +6,7 @@
     "external": [
         "https://aluraquiz-v2.omariosouto.vercel.app/"
     ],
+    "repo": "https://github.com/HMachiavelli/reactquiz",
     "theme": {
         "colors": {
             "primary": "#4CAF50",

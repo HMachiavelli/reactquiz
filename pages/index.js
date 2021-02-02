@@ -43,7 +43,7 @@ export default function Home() {
 
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/omariosouto/aluraquiz-base-1" />
+      <GitHubCorner projectUrl={db.repo} />
     </QuizBackground>
   )
 }
