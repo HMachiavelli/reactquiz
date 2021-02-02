@@ -1,32 +1,55 @@
-import styled from 'styled-components'
-import db from '../db.json'
+/* eslint-disable max-len */
+import React from 'react';
+import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
-import Widget from '../src/components/Widget'
+import db from '../db.json';
+
+import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
+import QuizContainer from '../src/components/QuizContainer';
 import QuizLogo from '../src/components/QuizLogo';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-import Head from 'next/head';
 
-const QuizContainer = styled.div`
+const QuizInput = styled.input`
   width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
+  background: transparent;
+  border: solid 1px #FFFFFF;
+  border-radius: 4px;
+  padding: 10px;
+  color: #FFFFFF;
+  margin: 10px 0 20px 0;
+`;
+
+const StartButton = styled.button`
+  width: 100%;
+  background: ${db.theme.colors.secondary};
+  border:none;
+  border-radius: 4px;
+  padding: 10px;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  &:hover {
+    opacity: .8;
   }
-`
+`;
 
 export default function Home() {
+  const [name, setName] = React.useState('');
+  const router = useRouter();
+
+  const goToQuiz = (evt) => {
+    evt.preventDefault();
+
+    router.push(`/quiz?name=${name}`);
+  };
+
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <Head>
-        <title>Breaking Bad Quiz</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"></link>
-      </Head>
       <QuizContainer>
         <QuizLogo />
         <Widget>
@@ -35,7 +58,17 @@ export default function Home() {
           </Widget.Header>
 
           <Widget.Content>
-            <p>lorem ipsum dolor sit amet...</p>
+            <p>Lets see if you have really watched all 5 seasons of Breaking Bad, paying attention to all the details ;)</p>
+
+            <form onSubmit={goToQuiz}>
+              <QuizInput
+                onChange={(evt) => setName(evt.target.value)}
+                placeholder="Say YOUR name"
+              />
+              <StartButton type="submit" disabled={name.length === 0}>
+                PLAY
+              </StartButton>
+            </form>
           </Widget.Content>
         </Widget>
 
@@ -51,5 +84,5 @@ export default function Home() {
       </QuizContainer>
       <GitHubCorner projectUrl={db.repo} />
     </QuizBackground>
-  )
+  );
 }

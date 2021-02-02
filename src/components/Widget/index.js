@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import db from '../../../db.json'
+import styled from 'styled-components';
+import db from '../../../db.json';
 
-const theme = db.theme;
+const { theme } = db;
 
 const Widget = styled.div`
   margin: 24px 0;
@@ -32,7 +32,7 @@ Widget.Header = styled.header`
  * {
    margin: 0;
  }
-`
+`;
 Widget.Content = styled.div`
  padding: 24px 32px 32px 32px;
  & > *:first-child: {
@@ -45,6 +45,6 @@ Widget.Content = styled.div`
    list-style: none;
    padding: 0;
  }
-`
+`;
 
 export default Widget;
