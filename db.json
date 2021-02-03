@@ -8,9 +8,20 @@
                 "Verdadeiro",
                 "Falso"
             ],
-            "answer": 1,
+            "answer": 0,
             "image": "https://rollingstone.uol.com.br/media/_versions/aaron-paul-breaking-bad_reproducao_widelg.jpg",
             "title": "Verdadeiro ou Falso? O diretor Vince Gilligan tinha a intenção inicial de matar Jesse ainda na primeira temporada."
+        },
+        {
+            "alternatives": [
+                "Colocar maionese",
+                "Tirar a salada",
+                "Tirar as cascas do pão",
+                "Trocar presunto por mortadela"
+            ],
+            "answer": 2,
+            "image": "https://www.criminalelement.com/wp-content/uploads/2015/11/breaking-bad-krazy8-475.jpg",
+            "title": "O que Walter teve que fazer para que Krazy-8 comesse o sanduíche enquanto ele estava preso no porão de Jesse?"
         }
     ],
     "external": [
